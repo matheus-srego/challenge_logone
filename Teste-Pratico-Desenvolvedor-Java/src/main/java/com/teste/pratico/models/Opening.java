@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
@@ -15,18 +16,19 @@ import lombok.Setter;
 @Entity
 @Table
 @AttributeOverride( name = "id", column = @Column ( name = "id" ) )
-public class Position extends AbstractEntity {
+@NoArgsConstructor
+public class Opening extends AbstractEntity {
 	
 	@Column( name = "inicio" )
-	private final LocalDateTime startDate;
+	private LocalDateTime startDate;
 	
 	@Column( name = "fim" )
-	private final LocalDateTime endDate;
+	private LocalDateTime endDate;
 	
 	@Column( name = "quantidade" )
-	private final Integer quantity;
+	private Integer quantity;
 
-	public Position( LocalDateTime startDate, LocalDateTime endDate, Integer quantity ) {
+	public Opening( LocalDateTime startDate, LocalDateTime endDate, Integer quantity ) {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.quantity = quantity;
