@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Cadastro de Solicitante</title>
+</h:head>
+
+<h:body>
+    <h:form id="createSolicitanteForm">
+        <p:messages id="messages" autoUpdate="true" closable="true" />
+
+        <!-- Formulário de cadastro de solicitante -->
+        <p:panelGrid columns="2" styleClass="form-grid" columnClasses="label-column,value-column">
+            <h:outputLabel for="nome" value="Nome:" />
+            <p:inputText id="nome" value="#{applicantBean.applicant.name}" required="true" label="Nome" />
+        </p:panelGrid>
+
+        <p:commandButton value="Cadastrar Solicitante" action="#{applicantBean.create}" update="@form, growl" icon="pi pi-check" />
+    </h:form>
+
+    <!-- Growl para mensagens de feedback -->
+    <p:growl id="growl" showDetail="true" life="3000" />
+</h:body>
+</html>

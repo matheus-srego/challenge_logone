@@ -12,5 +12,6 @@ public class WebConfig extends SpringBootServletInitializer implements WebMvcCon
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("redirect:/index.xhtml");
         registry.addViewController("/create-opening").setViewName("redirect:/create/create-opening.xhtml");
+        registry.addViewController("/create-applicant").setViewName("redirect:/create/create-applicant.xhtml");
     }
 }
