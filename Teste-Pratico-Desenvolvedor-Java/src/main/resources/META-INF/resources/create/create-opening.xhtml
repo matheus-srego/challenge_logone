@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Cadastro de Vagas</title>
+    </h:head>
+
+    <h:body>
+        <!-- Main container -->
+        <div>
+
+            <!-- Page title -->
+            <h1 class="page-title">Opening Registration</h1>
+
+            <!-- Registration form -->
+            <h:form id="registrationForm">
+                <p:panelGrid columns="2" styleClass="form-grid" columnClasses="label-column,value-column" id="formPanel">
+                    <!-- Start Date -->
+                    <p:outputLabel for="startDate" value="Start Date:" />
+                    <p:calendar id="startDate" value="#{openingBean.openingDTO.startDate}" required="true"
+                                pattern="dd/MM/yyyy HH:mm" showButtonPanel="true" />
+
+                    <!-- End Date -->
+                    <p:outputLabel for="endDate" value="End Date:" />
+                    <p:calendar id="endDate" value="#{openingBean.openingDTO.endDate}" required="true"
+                                pattern="dd/MM/yyyy HH:mm" showButtonPanel="true" />
+
+                    <!-- Quantity -->
+                    <p:outputLabel for="quantity" value="Quantity:" />
+                    <p:inputText id="quantity" value="#{openingBean.openingDTO.quantity}" required="true"
+                                 placeholder="Enter the quantity" />
+
+                </p:panelGrid>
+
+                <!-- Submit button -->
+                <div class="button-panel">
+                    <p:commandButton value="Register Opening" action="#{openingBean.create}" update="registrationForm, growl"
+                                     icon="pi pi-check" styleClass="register-button" />
+                </div>
+
+                <!-- Growl messages -->
+                <p:growl id="growl" showDetail="true" life="3000" sticky="false" />
+
+            </h:form>
+
+        </div>
+    </h:body>
+</html>

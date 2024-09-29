@@ -1,11 +1,11 @@
 package com.teste.pratico.services.impls;
 
 import com.teste.pratico.utils.ValidationUtils;
-import org.jvnet.hk2.annotations.Service;
 
 import com.teste.pratico.models.Opening;
 import com.teste.pratico.repositories.OpeningRepository;
 import com.teste.pratico.services.OpeningService;
+import org.springframework.stereotype.Service;
 
 @Service
 public class OpeningServiceImpl implements OpeningService {

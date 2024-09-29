@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table
+@Table( name = "vagas" )
 @AttributeOverride( name = "id", column = @Column ( name = "id" ) )
 @NoArgsConstructor
 public class Opening extends AbstractEntity {
